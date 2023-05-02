@@ -22,6 +22,9 @@ import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
+import UploadPage from "views/UploadPage";
+import JobDescriptionPage from "views/JobDescriptionPage";
+import Loader from "views/Loader";
 
 var routes = [
   {
@@ -42,7 +45,7 @@ var routes = [
     path: "/maps",
     name: "Maps",
     icon: "ni ni-pin-3 text-orange",
-    component: Maps,
+    component: Loader,
     layout: "/admin"
   },
   {
@@ -72,6 +75,13 @@ var routes = [
     icon: "ni ni-circle-08 text-pink",
     component: Register,
     layout: "/auth"
+  },
+  {
+    path: "/uploadResume",
+    name: "Upload Resume",
+    icon: "ni ni-circle-08 text-pink",
+    component: JobDescriptionPage,
+    layout: "/"
   }
 ];
 export default routes;

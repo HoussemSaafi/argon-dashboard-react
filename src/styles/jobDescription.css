@@ -1,0 +1,47 @@
+.card {
+    background-color: #ffffff;
+    width: 800px; /* increase the width */
+    margin: 0 auto;
+    padding: 40px; /* increase the padding */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* add box shadow */
+    transition: all 0.3s ease-in-out; /* add transition effect */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .textarea-container{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 300px;
+     border: 3px dashed #ddd; 
+    /* background: rgba(0,0,0,0.15); */
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    border: 0px;
+    min-height: 50px;
+    max-height: 450px;
+    max-width: 100%;
+    min-width: 100%;
+    font-size: 1em;
+    font-family: "Cerebri Sans", sans-serif;
+    line-height: 1.7;
+    /* border-bottom-left-radius: 8px; */
+    /* border-bottom-right-radius: 8px; */
+    border-radius: 8px;
+    font-weight: 400;
+    border: 1px dashed #8464ec;
+    white-space: pre;
+}
+
+.card-title{
+    padding-bottom: 30px;
+}

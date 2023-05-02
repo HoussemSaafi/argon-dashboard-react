@@ -1,0 +1,69 @@
+/*curtain */ 
+
+
+
+  
+  /*We need to add a height to the body
+  so that it can center the content as we'd like*/
+
+  [class*=curtain] {
+    position: relative;
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+
+    margin: 5vh;
+    padding: 5vw;
+  }
+  
+  
+  [class*=curtain]::after,
+  [class*=curtain]::before {
+    content: '';
+    background-color: green;
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+  .curtain-0::after,
+  .curtain-0::before {
+    height: 100%;
+    width: 50%;
+  }
+  
+  
+  /*Left half*/
+  .curtain-0::before {
+    left: 0;
+    transform-origin: left;
+  }
+  
+  /*Right half*/
+  .curtain-0::after {
+    right: 0;
+    transform-origin: right;
+  }
+  
+  /*Bottom half*/
+  .curtain-1::after {
+    bottom: 0;
+    transform-origin: bottom;
+  }
+  
+  /*Top half*/
+  .curtain-1::before {
+    top: 0;
+    transform-origin: top;
+  }
+  
+  
+  [class*=curtain]:hover:after,
+  [class*=curtain]:hover:before {
+    opacity: 0;
+  }
+  
+  
+  .curtain-0:hover:after,
+  .curtain-0:hover:before {
+    transform: scaleX(0);
+  }
+  

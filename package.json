@@ -44,6 +44,9 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-three/drei": "^7.26.1",
     "@react-three/fiber": "^7.0.21",
     "bootstrap": "4.6.0",
