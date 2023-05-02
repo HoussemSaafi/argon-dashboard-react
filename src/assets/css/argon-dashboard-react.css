@@ -110,6 +110,10 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+h10{
+  color: white;
+  font-size: 100px;
+}
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -21529,5 +21533,11 @@ button:focus,
 .table .badge i {
   margin-right: 10px;
 }
+
+.logotitle{
+  font-size: 150px;
+  font-weight: 40px;
+  color: white;
+  }
 
 /*# sourceMappingURL=argon-dashboard-react.css.map */

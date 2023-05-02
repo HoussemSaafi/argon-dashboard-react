@@ -19,17 +19,21 @@ import React from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
+import MovingText from 'react-moving-text'
+import { motion, useScroll } from "framer-motion";
 
 // core components
 import AuthNavbar from "components/Navbars/AuthNavbar.js";
 import AuthFooter from "components/Footers/AuthFooter.js";
 
 import routes from "routes.js";
+import Index from "views/Index";
+import Button3D from "components/Button3D";
 
 const Auth = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
-
+  const { scrollYProgress } = useScroll();
   React.useEffect(() => {
     document.body.classList.add("bg-default");
     return () => {
@@ -57,9 +61,13 @@ const Auth = (props) => {
       }
     });
   };
-
+  const Letters = ['a'];
   return (
     <>
+       <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
       <div className="main-content" ref={mainContent}>
         <AuthNavbar />
         <div className="header bg-gradient-info py-7 py-lg-8">
@@ -67,13 +75,25 @@ const Auth = (props) => {
             <div className="header-body text-center mb-7">
               <Row className="justify-content-center">
                 <Col lg="5" md="6">
-                  <h1 className="text-white">Welcome!</h1>
+                  {Letters.map((letter, index) =>
+                    <MovingText
+                      type="fadeIn"
+                      duration="1800ms"
+                      delay="index * 100ms"
+                      direction="alternate-reverse"
+                      timing="linear"
+                      iteration="infinite"
+                      fillMode="forwards">
+                      <h10 className="logotitle" style={{color:'white', fontSize:50}}>JobMagnet.io <i class="ni ni-atom"></i></h10>
+                    </MovingText>)}
                   <p className="text-lead text-light">
-                    Use these awesome forms to login or create new account in
-                    your project for free.
+                      Job search got you stuck? Let JobMagnet pull you out of that rut!
                   </p>
                 </Col>
               </Row>
+              <br></br>
+              <Row className="justify-content-center">
+              </Row>     
             </div>
           </Container>
           <div className="separator separator-bottom separator-skew zindex-100">
@@ -94,12 +114,7 @@ const Auth = (props) => {
         </div>
         {/* Page content */}
         <Container className="mt--8 pb-5">
-          <Row className="justify-content-center">
-            <Switch>
-              {getRoutes(routes)}
-              <Redirect from="*" to="/auth/login" />
-            </Switch>
-          </Row>
+          <Index/>
         </Container>
       </div>
       <AuthFooter />
