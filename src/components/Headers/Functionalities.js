@@ -19,8 +19,11 @@
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 import { motion } from "framer-motion";
+import { NavLink as NavLinkRRD, Link } from "react-router-dom";
+
 
 const Functionalities = () => {
+      
     return (
         <>
             <div className="header bg-gradient-info pb-8 pt-5 pt-md-8">
@@ -35,6 +38,8 @@ const Functionalities = () => {
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                 >
                                     <Card className="card-stats mb-4 mb-xl-0">
+                                    <Link to="/upload/job">
+
                                         <CardBody>
                                             <Row>
                                                 <div className="col">
@@ -58,6 +63,7 @@ const Functionalities = () => {
                                                 <span className="text-nowrap">Get expert feedback on your resume</span>
                                             </p>
                                         </CardBody>
+                                        </Link>
                                     </Card>
                                 </motion.div>
                             </Col>
@@ -69,6 +75,7 @@ const Functionalities = () => {
                                 >
                                     <Card className="card-stats mb-4 mb-xl-0">
                                         <CardBody>
+                                            
                                             <Row>
                                                 <div className="col">
                                                     <CardTitle

@@ -1,0 +1,102 @@
+.pdf-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .slider {
+    width: 80%;
+    height: 30px;
+    background:
+    linear-gradient(90deg, rgb(203, 48, 76) 0%, rgb(244, 135, 42) 40%, rgb(252, 229, 89) 78%, rgb(151, 200, 47) 87%, rgb(114, 190, 41) 90%);
+
+    position: relative;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  
+  .slider-range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 15px;
+    outline: none;
+    margin: 0;
+  }
+  
+  .slider-fill {
+    height: 100%;
+    background: #2dbd8d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 15px;
+  }
+  
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .min-label,
+  .max-label {
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  .label {
+    position: absolute;
+    left: 10%;
+    top: -30px;
+    font-size: 24px;
+    color: #333333;
+  }
+  
+  .label-target {
+    position: absolute;
+    right: 10%;
+    top: -30px;
+    font-size: 24px;
+    color: #333333;
+  }
+  
+  .arrow-pointer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    color: #333333;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .slider {
+      width: 100%;
+    }
+  
+    .label,
+    .label-target {
+      font-size: 20px;
+    }
+  
+    .arrow-pointer {
+      font-size: 12px;
+    }
+  }
+  

@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from 'react';
-import '../styles/uploadPage.css';
+import { useHistory } from 'react-router-dom';
+import styles from '../styles/uploadPage.module.css';
+import cloudImage from '../assets/img/upload/cloud-computing.png';
+import ResumeService from 'api/resumeService';
 
 function UploadPage() {
   const [file, setFile] = useState(null);
@@ -14,44 +17,59 @@ function UploadPage() {
         setFile(fileReader.result);
         setFileName(uploadedFile.name); // set the file name
       };
-      fileReader.readAsDataURL(uploadedFile);
+      ResumeService.uploadResume(uploadedFile)
+        .then((response) => {
+          console.log(response.data); // handle response data
+        })
+        .catch((error) => {
+          console.log(error); // handle error
+        });
+
+        fileReader.readAsDataURL(uploadedFile);
+
+    };
     }
-  };
+  
   
   const removeFile = () => {
     setFile(null);
 
   };
+  const history = useHistory();
+  
+  function handleNextButtonClick() {
+    history.push('/admin/index');
+  }
 
   return (
-    <div className='upload'>
 
-      <div className='file-upload'>
+    <div className={styles['upload']}>
+      <div className={styles['file-upload']}>
        2. UPLOAD YOUR RESUME
-        <div className='image-upload-wrap'>
+        <div className={styles['image-upload-wrap']}>
 
-          <div className='upload-content'>
+          <div className={styles['upload-content']}>
             {file ? (
-              <div className='uploaded-file'>
-                 <div className="file-container">
-                   <img src="../assets/img/upload/cloud-computing.png"/>
+              <div className={styles['uploaded-file']}>
+                 <div className={styles["file-container"]}>
+                   <img src={cloudImage}/>
                      <p>{fileName}</p>
                          <button onClick={() => removeFile(file)}>X</button>
                   </div>
 
               </div>
             ) : (
-              <div className='drag-text'>
+              <div className={styles['drag-text']}>
                         <input
               id='file-upload'
-              className='file-upload-input'
+              className={styles['file-upload-input']}
               type='file'
               onChange={handleFileChange}
               accept='application/pdf'
             />
 
                 <img
-                  src='cloud-computing.png'
+                 src={cloudImage}
                   height={150}
                   alt='Upload Cloud'
                 />
@@ -66,10 +84,10 @@ function UploadPage() {
         </div>
         <br></br>
         <button
-                  className='file-upload-btn '
+                  className={styles['file-upload-button']}
                   type='button'
-                  onClick={() => document.getElementById('file-upload').click()}
-                >
+                  onClick={handleNextButtonClick}
+                  >
                   Add File
                 </button>
       </div>

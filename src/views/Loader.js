@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Loader.css';
+import styles from '../styles/Loader.module.css';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core'; // disable automatic addition of CSS styles
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,10 +63,10 @@ const Loader = () => {
 
 
   return (
-
+<div className={styles['page-container']}>
     
-<div class="loading-container">
-        <div className="loading-text">
+<div className={styles["loading-container"]}>
+        <div className={styles["loading-text"]}>
           <span>
             <FontAwesomeIcon icon={check1 ? faCheckCircle : faCircle} />
           </span>
@@ -84,7 +85,7 @@ const Loader = () => {
           <span>...</span>
         </div>
 
-        <div className="loading-text">
+        <div className={styles["loading-text"]}>
           <span>
             <FontAwesomeIcon icon={check2 ? faCheckCircle : faCircle} />
           </span>
@@ -105,7 +106,7 @@ const Loader = () => {
           <span>.</span>
         </div>
 
-        <div className="loading-text">
+        <div className={styles["loading-text"]}>
           <span>
             <FontAwesomeIcon icon={check3 ? faCheckCircle : faCircle} />
           </span>
@@ -127,7 +128,7 @@ const Loader = () => {
           <span>.</span>
         </div>
 
-        <div className="loading-text">
+        <div className={styles["loading-text"]}>
           <span>
             <FontAwesomeIcon icon={check4 ? faCheckCircle : faCircle} />
           </span>
@@ -278,8 +279,9 @@ const Loader = () => {
 
 
 
-
          </div>
+         </div>
+
 
 
   );

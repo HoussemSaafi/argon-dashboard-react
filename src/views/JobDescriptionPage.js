@@ -1,16 +1,27 @@
 import React from 'react'
-import '../styles/jobDescription.css';
+import styles from '../styles/jobDescription.module.css';
+import { useHistory } from 'react-router-dom';
 
 export default function JobDescriptionPage() {
+  const history = useHistory();
+
+  function handleNextButtonClick() {
+    history.push('/upload/resume');
+  }
+  
+  
   return (
-    <div className='card'>
-    <div className='card-content'>
- <div className='card-title' > 
+<div className={styles['page-container']}>
+
+    <div className={styles['card']}>
+    
+    <div className={styles['card-content']}>
+ <div className={styles['card-title']} > 
  1. PASTE YOUR JOB DESCRIPTION
 
   </div>
-  <div className='card-text'>
-  <textarea type="text" className="textarea-container" spellcheck="true" placeholder="Paste the job description in here so we can analyze its skills.
+  <div className={styles['card-text']}>
+  <textarea type="text" className={styles["textarea-container"]} spellcheck="true" placeholder="Paste the job description in here so we can analyze its skills.
 
 To make things more accurate, paste in the full job description 
 (e.g. roles, responsibilities, qualifications) but exclude 
@@ -21,14 +32,18 @@ skills. Only English job descriptions please.
 "></textarea>
      </div>
      <br></br>
-        <button
-                  className='file-upload-btn '
+     <button
+                  className={styles['file-upload-button']}
                   type='button'
-                  onClick={() => {}}
-                >
+      onClick={handleNextButtonClick}
+    >
+
                   Next
                 </button>
 
 </div>
-  </div>  )
+  </div> 
+  </div> 
+
+   )
 }

@@ -42,11 +42,25 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/maps",
+    path: "/job",
+    name: "Maps",
+    icon: "ni ni-pin-3 text-orange",
+    component: JobDescriptionPage,
+    layout: "/upload"
+  },
+  {
+    path: "/resume",
+    name: "Maps",
+    icon: "ni ni-pin-3 text-orange",
+    component: UploadPage,
+    layout: "/upload"
+  },
+  {
+    path: "/loader",
     name: "Maps",
     icon: "ni ni-pin-3 text-orange",
     component: Loader,
-    layout: "/admin"
+    layout: "/upload"
   },
   {
     path: "/user-profile",
@@ -81,7 +95,7 @@ var routes = [
     name: "Upload Resume",
     icon: "ni ni-circle-08 text-pink",
     component: JobDescriptionPage,
-    layout: "/"
+    layout: "/test"
   }
 ];
 export default routes;
